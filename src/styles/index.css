@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+button, input, select, option {
+  font-family: inherit;
+}
+
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: calc(100vh - 50px);
+}
+
+.navigation {
+  height: 50px;
+}
+
+.main-sidebar {
+  max-width: 400px;
+  width: 100%;
+}
+
+.todo {
+  max-width: calc(100% - (400px + 400px));
+  width: 100%;
+  height: calc(100% - 69px);
+}
+
+.todo-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 7px;
+}
+.todo-menu__left-side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.todo-menu__right-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.todo-list {
+  background: #f2f2f2;
+  height: calc(100% - 40px);
+  padding: 7px;
+}
+
+.todo-task {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 17px;
+  background: #fff;
+}
+.todo-task__left-side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% - 80px);
+}
+.todo-task__right-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 80px;
+}
+
+.todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 40px;
+}
+.todo-form__form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.todo-form__left-side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% - 300px);
+}
+.todo-form__right-side {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 300px;
+}
+.todo-form .todo-form__task-text-input {
+  width: 100%;
+}
+
+.additional-sidebar {
+  max-width: 200px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=index.css.map */

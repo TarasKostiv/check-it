@@ -1,0 +1,72 @@
+// import fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// variables
+// fonts
+$main-font-size: 16px;
+$main-font-family: 'Open Sans', sans-serif;
+// brake points
+$monitor-4k: 2560px;
+$laptop-l: 1024px;
+$phone-reversed: 850px;
+$tablet: 768px;
+$mobile-l: 425px;
+$mobile-m: 375px;
+$mobile-s: 320px;
+// special brake points
+$iphone-6-7-8-plus: 414px;
+$ipad-pro-reversed: 1366px;
+// sizes
+
+
+// main styles
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  font-size: $main-font-size;
+  font-family: $main-font-family;
+}
+
+//html, body, div, span, applet, object, iframe,
+//h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+//a, abbr, acronym, address, big, cite, code,
+//del, dfn, em, img, ins, kbd, q, s, samp,
+//small, strike, strong, sub, sup, tt, var,
+//b, u, i, center,
+//dl, dt, dd, ol, ul, li,
+//fieldset, form, label, legend,
+//table, caption, tbody, tfoot, thead, tr, th, td,
+//article, aside, canvas, details, embed,
+//figure, figcaption, footer, header, hgroup,
+//menu, nav, output, ruby, section, summary,
+//time, mark, audio, video {
+//  margin: 0;
+//  padding: 0;
+//  border: 0;
+//  vertical-align: baseline;
+//}
+//
+ol, ul {
+  list-style: none;
+}
+
+button, input, select, option {
+  font-family: inherit;
+}
+
+.main-component{
+
+}
+
+// import other styles
+@import './tools';
+// import main styles
+@import '../app/app';
+@import '../components/Navigation/Navigation/navigation';
+@import '../components/MainSidebar/MainSidebar/main-sidebar';
+@import '../components/Todo/Todo/todo';
+@import '../components/AdditionalSidebar/AdditionalSidebar/additional-sidebar';
