@@ -1,11 +1,10 @@
 import React from 'react'
-import TodoTask from "../TodoTask"
 
-function TodoList(props) {
+function TodoList({children}) {
     return (
         <div className="todo-list">
             <ul className="todo-list__tasks-list">
-                <TodoTask />
+                {children}
             </ul>
         </div>
     )

@@ -6,11 +6,11 @@
     @include df(flex-start, center);
   }
   &__left-side{
-    @include df(flex-start, center);
+    //@include df(flex-start, center);
     width: calc(100% - 300px);
   }
   &__right-side{
-    @include df(flex-end, center);
+    //@include df(flex-end, center);
     width: 300px;
   }
   .todo-form__task-text-input{

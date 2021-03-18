@@ -3,12 +3,12 @@
   padding: 7px;
 
   &__left-side{
-    @include df(flex-start, center);
+    //@include df(flex-start, center);
     width: 50%;
   }
 
   &__right-side{
-    @include df(flex-end, center);
+    //@include df(flex-end, center);
     width: 50%;
   }
 }

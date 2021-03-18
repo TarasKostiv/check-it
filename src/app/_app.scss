@@ -1,4 +1,5 @@
 .main-container{
   @include df();
+  flex-wrap: nowrap;
   height: calc(100vh - 50px);
 }

@@ -3,11 +3,11 @@
   padding: 17px;
   background: #fff;
   &__left-side{
-    @include df(flex-start, center);
+    //@include df(flex-start, center);
     width: calc(100% - 80px);
   }
   &__right-side{
-    @include df(flex-end, center);
+    //@include df(flex-end, center);
     min-width: 80px;
   }
 }

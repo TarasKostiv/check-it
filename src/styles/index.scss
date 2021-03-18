@@ -5,6 +5,10 @@
 // fonts
 $main-font-size: 16px;
 $main-font-family: 'Open Sans', sans-serif;
+// colors
+$dark-blue: #2C7DA0;
+$light-blue: #A9D6E5;
+$grey: #f2f2f2;
 // brake points
 $monitor-4k: 2560px;
 $laptop-l: 1024px;
@@ -17,7 +21,12 @@ $mobile-s: 320px;
 $iphone-6-7-8-plus: 414px;
 $ipad-pro-reversed: 1366px;
 // sizes
+$border-input-radius: 4px;
+$corner-padding: 30px;
+$padding-top: 20px;
 
+// import helpful styles
+@import './tools';
 
 // main styles
 *{
@@ -31,25 +40,25 @@ html{
   font-family: $main-font-family;
 }
 
-//html, body, div, span, applet, object, iframe,
-//h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-//a, abbr, acronym, address, big, cite, code,
-//del, dfn, em, img, ins, kbd, q, s, samp,
-//small, strike, strong, sub, sup, tt, var,
-//b, u, i, center,
-//dl, dt, dd, ol, ul, li,
-//fieldset, form, label, legend,
-//table, caption, tbody, tfoot, thead, tr, th, td,
-//article, aside, canvas, details, embed,
-//figure, figcaption, footer, header, hgroup,
-//menu, nav, output, ruby, section, summary,
-//time, mark, audio, video {
-//  margin: 0;
-//  padding: 0;
-//  border: 0;
-//  vertical-align: baseline;
-//}
-//
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
 ol, ul {
   list-style: none;
 }
@@ -62,8 +71,36 @@ button, input, select, option {
 
 }
 
-// import other styles
-@import './tools';
+input[type="text"]{
+  border: none;
+  border-radius: $border-input-radius;
+  outline: none;
+  transition: .1s all;
+}
+
+button{
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.right-side{
+  @include df(flex-end)
+}
+.left-side{
+  @include df(flex-start)
+}
+
+.input-search{
+  padding: 5px;
+  background: rgba($grey, 0.25);
+  &:active, &:hover, &:focus{
+    background: #fff;
+  }
+}
+
 // import main styles
 @import '../app/app';
 @import '../components/Navigation/Navigation/navigation';

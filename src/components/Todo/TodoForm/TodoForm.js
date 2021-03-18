@@ -4,10 +4,10 @@ function TodoForm(props) {
     return (
         <div className="todo-form">
             <form className="todo-form__form">
-                <div className="todo-form__left-side">
-                    <input type="text" name="task-text-input" id="todo-task-text-input" className="todo-form__task-text-input"/>
+                <div className="todo-form__left-side left-side">
+                    <input type="text" name="task-text-input" id="todo-task-text-input input-text input" className="todo-form__task-text-input"/>
                 </div>
-                <div className="todo-form__right-side">
+                <div className="todo-form__right-side right-side">
                     {/*<p>calendar</p>*/}
                     {/*<p>repeat</p>*/}
                     {/*<p>notification</p>*/}
