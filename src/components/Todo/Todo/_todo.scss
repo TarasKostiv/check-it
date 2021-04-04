@@ -1,0 +1,14 @@
+.todo{
+  max-width: 100% ;
+  padding-right: $corner-padding;
+  padding-left: $corner-padding;
+  padding-top: $padding-top;
+  width: 100%;
+  height: calc(100% - 69px);
+}
+
+// import children styles
+@import '../TodoMenu/todo-menu';
+@import '../TodoList/todo-list';
+@import '../TodoTask/todo-task';
+@import '../TodoForm/todo-form';

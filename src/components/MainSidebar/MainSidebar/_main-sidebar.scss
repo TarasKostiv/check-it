@@ -1,0 +1,10 @@
+.main-sidebar{
+  background: $grey;
+  height: 100%;
+  max-width: 400px;
+  width: 100%;
+  padding-left: $corner-padding;
+  padding-right: $corner-padding;
+  padding-top: $padding-top;
+  overflow-y: auto;
+}

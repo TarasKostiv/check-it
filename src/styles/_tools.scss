@@ -1,0 +1,7 @@
+@mixin df ($j-c: flex-start, $al-i: flex-start, $fl-d: row, $fl-w: wrap) {
+  display: flex;
+  justify-content: $j-c;
+  align-items: $al-i;
+  flex-direction: $fl-d;
+  flex-wrap: $fl-w;
+}
