@@ -1,5 +1,5 @@
 .navigation{
-  background: $dark-blue;
+  background: $main-color;
   color: #fff;
   height: 45px;
   padding: 0px $corner-padding;
@@ -10,7 +10,3 @@
     align-items: center;
   }
 }
-
-// import components styles
-@import '../NotificationButton/notifiaction-button';
-@import '../ProfileButton/profile-button';

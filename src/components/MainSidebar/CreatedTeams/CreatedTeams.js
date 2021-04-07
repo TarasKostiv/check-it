@@ -13,12 +13,12 @@ function CreatedTeams(props) {
 
     const renderTeams = (group) => {
         return group.map(team => {
-            return <ListElem name={team.name} id={team.id}/>
+            return <ListElem name={team.name} id={team.id} to={team.name.replace(/\s/g, '-').toLowerCase()}/>
         })
     }
 
     return (
-        <div className="created-team">
+        <div className="created-team team-block">
             <ListOfTeams name={'Created teams'} >
                 {renderTeams(createdTeams)}
             </ListOfTeams>

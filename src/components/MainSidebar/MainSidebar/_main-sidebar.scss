@@ -7,4 +7,47 @@
   padding-right: $corner-padding;
   padding-top: $padding-top;
   overflow-y: auto;
+
+  .created-team{
+    margin-top: $margin * 3 ;
+  }
+
+  .list-of-teams{
+    &__list{
+      .list-elem{
+        margin-bottom: $margin;
+        padding-top: $padding * 0.6;
+        padding-bottom: $padding * 0.6;
+        padding-right: $padding;
+        padding-left: $padding;
+        &__left-side, &__right-side{
+          display: flex;
+          align-items: center;
+        }
+
+        &:hover{
+          background: #e2e2e2;
+        }
+      }
+    }
+  }
+
+  .create-team-button {
+    &__btn {
+      display: flex;
+      align-items: center;
+      border-radius: $border-radius;
+      background: $main-color;
+      color: $theme-font-color;
+      padding-top: $padding * 0.6;
+      padding-bottom: $padding * 0.6;
+      padding-right: $padding;
+      padding-left: $padding;
+      font-size: 0.8rem;
+
+      @include color-hover($theme-font-color, $main-color)
+    }
+  }
 }
+
+

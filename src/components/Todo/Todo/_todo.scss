@@ -1,14 +1,94 @@
 .todo{
-  max-width: 100% ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-right: $corner-padding;
   padding-left: $corner-padding;
   padding-top: $padding-top;
   width: 100%;
   height: calc(100% - 69px);
+  background: $light-blue;
 }
 
-// import children styles
-@import '../TodoMenu/todo-menu';
-@import '../TodoList/todo-list';
-@import '../TodoTask/todo-task';
-@import '../TodoForm/todo-form';
+.todo-menu{
+  max-width: $todo-width;
+  width: 100%;
+  @include df(flex-start, center);
+  padding: 7px;
+
+  &__left-side{
+    //@include df(flex-start, center);
+    width: 50%;
+  }
+
+  &__right-side{
+    //@include df(flex-end, center);
+    width: 50%;
+  }
+}
+
+.todo-task {
+  max-width: $todo-width;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 17px;
+  border-radius: $border-radius;
+  margin-bottom: $margin;
+  background: #fff;
+  @include color-hover($grey, inherit, none);
+
+  &__right-side, &__left-side{
+    display: flex;
+    align-items: center;
+  }
+
+  &__left-side {
+    width: calc(100% - 80px);
+  }
+
+  &__right-side {
+    min-width: 80px;
+  }
+
+  &__delete-btn{
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+    background: $main-color;
+    color: $theme-font-color;
+    padding: $padding * 0.6;
+    font-size: 1rem;
+
+    @include color-hover($theme-font-color, $main-color)
+  }
+}
+
+.todo-list{
+  max-width: $todo-width;
+  width: 100%;
+  height: calc(100% - 40px);
+  padding: 7px;
+}
+
+.todo-form{
+  max-width: $todo-width;
+  width: 100%;
+  @include df(center, center);
+  height: 40px;
+  &__form{
+    width: 100%;
+    @include df(flex-start, center);
+  }
+  &__left-side{
+    //@include df(flex-start, center);
+    width: calc(100% - 300px);
+  }
+  &__right-side{
+    //@include df(flex-end, center);
+    width: 300px;
+  }
+  .todo-form__task-text-input{
+    width: 100%;
+  }
+}

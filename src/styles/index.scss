@@ -3,12 +3,12 @@
 
 // variables
 // fonts
-$main-font-size: 16px;
 $main-font-family: 'Open Sans', sans-serif;
 // colors
-$dark-blue: #2C7DA0;
+$main-color: #2C7DA0;
 $light-blue: #A9D6E5;
 $grey: #f2f2f2;
+$theme-font-color: #fff;
 // brake points
 $monitor-4k: 2560px;
 $laptop-l: 1024px;
@@ -21,9 +21,14 @@ $mobile-s: 320px;
 $iphone-6-7-8-plus: 414px;
 $ipad-pro-reversed: 1366px;
 // sizes
-$border-input-radius: 4px;
+$border-radius: 2px;
 $corner-padding: 30px;
 $padding-top: 20px;
+$padding: 8px;
+$margin: 8px;
+$todo-width: 900px;
+// times
+$transition-time: 0.1s;
 
 // import helpful styles
 @import './tools';
@@ -36,7 +41,7 @@ $padding-top: 20px;
 }
 
 html{
-  font-size: $main-font-size;
+  font-size: 14px;
   font-family: $main-font-family;
 }
 
@@ -57,6 +62,12 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   vertical-align: baseline;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ol, ul {
@@ -65,17 +76,6 @@ ol, ul {
 
 button, input, select, option {
   font-family: inherit;
-}
-
-.main-component{
-
-}
-
-input[type="text"]{
-  border: none;
-  border-radius: $border-input-radius;
-  outline: none;
-  transition: .1s all;
 }
 
 button{
@@ -93,17 +93,10 @@ button{
   @include df(flex-start)
 }
 
-.input-search{
-  padding: 5px;
-  background: rgba($grey, 0.25);
-  &:active, &:hover, &:focus{
-    background: #fff;
-  }
-}
 
 // import main styles
+@import './inputs';
 @import '../app/app';
 @import '../components/Navigation/Navigation/navigation';
 @import '../components/MainSidebar/MainSidebar/main-sidebar';
 @import '../components/Todo/Todo/todo';
-@import '../components/AdditionalSidebar/AdditionalSidebar/additional-sidebar';

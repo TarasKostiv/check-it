@@ -1,7 +1,6 @@
 import Navigation from "../components/Navigation/Navigation"
 import MainSidebar from "../components/MainSidebar/MainSidebar"
 import Todo from "../components/Todo/Todo"
-import AdditionalSidebar from "../components/AdditionalSidebar/AdditionalSidebar"
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
        <main className="main-container">
             <MainSidebar />
             <Todo />
-            <AdditionalSidebar />
         </main>
     </div>
   )

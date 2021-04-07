@@ -6,7 +6,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -27,6 +27,12 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   vertical-align: baseline;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ol, ul {
@@ -35,13 +41,6 @@ ol, ul {
 
 button, input, select, option {
   font-family: inherit;
-}
-
-input[type=text] {
-  border: none;
-  border-radius: 4px;
-  outline: none;
-  transition: 0.1s all;
 }
 
 button {
@@ -68,12 +67,107 @@ button {
   flex-wrap: wrap;
 }
 
+input[type=text] {
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  transition: 0.1s all;
+}
+
 .input-search {
   padding: 5px;
-  background: rgba(242, 242, 242, 0.25);
-}
-.input-search:active, .input-search:hover, .input-search:focus {
   background: #fff;
+}
+
+.simple-checkbox {
+  display: none;
+}
+
+.simple-checkbox + label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.simple-checkbox + label:last-child {
+  margin-bottom: 0;
+}
+
+.simple-checkbox + label:before {
+  content: "  ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid #000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+  -webkit-transition: all 0.12s, border-color 0.08s;
+  transition: all 0.12s, border-color 0.08s;
+}
+
+.simple-checkbox:checked + label:before {
+  width: 7px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] + label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type=radio] + label:last-child {
+  margin-bottom: 0;
+}
+
+input[type=radio] + label:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+  -webkit-transition: all 0.12s, border-color 0.06s;
+  transition: all 0.1s, border-color 0.06s;
+}
+
+input[type=radio]:checked + label:before {
+  width: 7px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .main-container {
@@ -112,17 +206,56 @@ button {
   padding-top: 20px;
   overflow-y: auto;
 }
+.main-sidebar .created-team {
+  margin-top: 24px;
+}
+.main-sidebar .list-of-teams__list .list-elem {
+  margin-bottom: 8px;
+  padding-top: 4.8px;
+  padding-bottom: 4.8px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.main-sidebar .list-of-teams__list .list-elem__left-side, .main-sidebar .list-of-teams__list .list-elem__right-side {
+  display: flex;
+  align-items: center;
+}
+.main-sidebar .list-of-teams__list .list-elem:hover {
+  background: #e2e2e2;
+}
+.main-sidebar .create-team-button__btn {
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  background: #2C7DA0;
+  color: #fff;
+  padding-top: 4.8px;
+  padding-bottom: 4.8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  font-size: 0.8rem;
+  transition: color 0.1s, background 0.1s;
+}
+.main-sidebar .create-team-button__btn:hover {
+  background: #fff;
+  color: #2C7DA0;
+}
 
 .todo {
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-right: 30px;
   padding-left: 30px;
   padding-top: 20px;
   width: 100%;
   height: calc(100% - 69px);
+  background: #A9D6E5;
 }
 
 .todo-menu {
+  max-width: 900px;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -137,19 +270,24 @@ button {
   width: 50%;
 }
 
-.todo-list {
-  height: calc(100% - 40px);
-  padding: 7px;
-}
-
 .todo-task {
+  max-width: 900px;
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 17px;
+  border-radius: 2px;
+  margin-bottom: 8px;
   background: #fff;
+  transition: color none, background none;
+}
+.todo-task:hover {
+  background: #f2f2f2;
+  color: inherit;
+}
+.todo-task__right-side, .todo-task__left-side {
+  display: flex;
+  align-items: center;
 }
 .todo-task__left-side {
   width: calc(100% - 80px);
@@ -157,8 +295,31 @@ button {
 .todo-task__right-side {
   min-width: 80px;
 }
+.todo-task__delete-btn {
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  background: #2C7DA0;
+  color: #fff;
+  padding: 4.8px;
+  font-size: 1rem;
+  transition: color 0.1s, background 0.1s;
+}
+.todo-task__delete-btn:hover {
+  background: #fff;
+  color: #2C7DA0;
+}
+
+.todo-list {
+  max-width: 900px;
+  width: 100%;
+  height: calc(100% - 40px);
+  padding: 7px;
+}
 
 .todo-form {
+  max-width: 900px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,16 +343,6 @@ button {
 }
 .todo-form .todo-form__task-text-input {
   width: 100%;
-}
-
-.additional-sidebar {
-  background: #f2f2f2;
-  max-width: 400px;
-  width: 100%;
-  height: 100%;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-top: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */

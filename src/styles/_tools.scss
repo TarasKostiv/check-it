@@ -5,3 +5,12 @@
   flex-direction: $fl-d;
   flex-wrap: $fl-w;
 }
+
+@mixin color-hover($bg, $color, $time: $transition-time) {
+  transition: color $time, background $time;
+  &:hover{
+    background: $bg;
+    color: $color;
+    @content;
+  }
+}
