@@ -4,9 +4,24 @@
   height: 45px;
   padding: 0px $corner-padding;
 
-  @include df(center, center);
-  .right-side , .left-side{
-    width: 50%;
+  .nav-button{
+    display: flex;
     align-items: center;
+    font-size: 1.4rem;
+    padding: $padding * 0.5;
+    margin-right: $margin;
+    margin-left: $margin;
+    @include color-hover(rgba($grey, 0.3), inherit , none )
+  }
+
+  @include df(center, center);
+  &__right-side , &__left-side{
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__left-side{
+
   }
 }

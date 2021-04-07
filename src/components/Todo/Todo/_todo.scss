@@ -6,23 +6,22 @@
   padding-left: $corner-padding;
   padding-top: $padding-top;
   width: 100%;
-  height: calc(100% - 69px);
+  height: calc(100%);
   background: $light-blue;
 }
 
 .todo-menu{
   max-width: $todo-width;
   width: 100%;
-  @include df(flex-start, center);
+  display: flex;
+  justify-content: center;
   padding: 7px;
 
   &__left-side{
-    //@include df(flex-start, center);
     width: 50%;
   }
 
   &__right-side{
-    //@include df(flex-end, center);
     width: 50%;
   }
 }
@@ -81,11 +80,9 @@
     @include df(flex-start, center);
   }
   &__left-side{
-    //@include df(flex-start, center);
     width: calc(100% - 300px);
   }
   &__right-side{
-    //@include df(flex-end, center);
     width: 300px;
   }
   .todo-form__task-text-input{

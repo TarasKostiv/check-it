@@ -84,6 +84,8 @@ button{
   outline: none;
   color: inherit;
   cursor: pointer;
+  border-radius: $border-radius;
+  padding: $padding * 0.5;
 }
 
 .right-side{

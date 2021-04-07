@@ -7,7 +7,7 @@ function Navigation(props) {
     return (
         <nav className="navigation">
             <div className="navigation__left-side left-side">
-                <NavButton  icon={<VscMenu />}/>
+                <NavButton nameClass="navigation__left-side__menu-btn" icon={<VscMenu />}/>
                 <InputSearch />
             </div>
             <div className="navigation__right-side right-side">

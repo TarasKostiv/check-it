@@ -1,10 +1,10 @@
 import React from 'react';
 
-function NavButton({icon, func}) {
+function NavButton({icon, func, nameClass = ""}) {
     return (
-        <div className="button nav-button">
-            <button className="nav-button__button">{icon}</button>
-        </div>
+        <>
+            <button className={"nav-button " + nameClass}>{icon}</button>
+        </>
     );
 }
 

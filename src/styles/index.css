@@ -49,6 +49,8 @@ button {
   outline: none;
   color: inherit;
   cursor: pointer;
+  border-radius: 2px;
+  padding: 4px;
 }
 
 .right-side {
@@ -177,7 +179,7 @@ input[type=radio]:checked + label:before {
   flex-direction: row;
   flex-wrap: wrap;
   flex-wrap: nowrap;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 45px);
 }
 
 .navigation {
@@ -191,15 +193,28 @@ input[type=radio]:checked + label:before {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.navigation .right-side, .navigation .left-side {
+.navigation .nav-button {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 4px;
+  margin-right: 8px;
+  margin-left: 8px;
+  transition: color none, background none;
+}
+.navigation .nav-button:hover {
+  background: rgba(242, 242, 242, 0.3);
+  color: inherit;
+}
+.navigation__right-side, .navigation__left-side {
   width: 50%;
+  display: flex;
   align-items: center;
 }
-
 .main-sidebar {
   background: #f2f2f2;
   height: 100%;
-  max-width: 400px;
+  max-width: 300px;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
@@ -249,7 +264,7 @@ input[type=radio]:checked + label:before {
   padding-left: 30px;
   padding-top: 20px;
   width: 100%;
-  height: calc(100% - 69px);
+  height: calc(100%);
   background: #A9D6E5;
 }
 
@@ -257,10 +272,7 @@ input[type=radio]:checked + label:before {
   max-width: 900px;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
   padding: 7px;
 }
 .todo-menu__left-side {
