@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -39,11 +39,11 @@ ol, ul {
   list-style: none;
 }
 
-button, input, select, option {
+button, .important-checkbox + label, input, select, option {
   font-family: inherit;
 }
 
-button {
+button, .important-checkbox + label {
   border: none;
   background: none;
   outline: none;
@@ -125,6 +125,24 @@ input[type=text] {
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.important-checkbox {
+  display: none;
+}
+
+.important-checkbox + label {
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  margin-right: 8px;
+  background: #2C7DA0;
+  color: #fff;
+  transition: color 0.1s, background 0.1s;
+}
+.important-checkbox + label:hover {
+  background: #fff;
+  color: #2C7DA0;
 }
 
 input[type=radio] {
@@ -220,6 +238,13 @@ input[type=radio]:checked + label:before {
   padding-right: 30px;
   padding-top: 20px;
   overflow-y: auto;
+  transition: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.main-sidebar_hidden {
+  margin-left: -300px;
+}
+.main-sidebar .team-block .list-elem__name {
+  font-weight: normal;
 }
 .main-sidebar .created-team {
   margin-top: 24px;
@@ -230,6 +255,7 @@ input[type=radio]:checked + label:before {
   padding-bottom: 4.8px;
   padding-right: 8px;
   padding-left: 8px;
+  transition: color 0.1s, background 0.1s;
 }
 .main-sidebar .list-of-teams__list .list-elem__left-side, .main-sidebar .list-of-teams__list .list-elem__right-side {
   display: flex;
@@ -237,23 +263,12 @@ input[type=radio]:checked + label:before {
 }
 .main-sidebar .list-of-teams__list .list-elem:hover {
   background: #e2e2e2;
+  color: inherit;
 }
-.main-sidebar .create-team-button__btn {
-  display: flex;
-  align-items: center;
-  border-radius: 2px;
-  background: #2C7DA0;
-  color: #fff;
-  padding-top: 4.8px;
-  padding-bottom: 4.8px;
-  padding-right: 8px;
-  padding-left: 8px;
-  font-size: 0.8rem;
-  transition: color 0.1s, background 0.1s;
-}
-.main-sidebar .create-team-button__btn:hover {
-  background: #fff;
+.main-sidebar .create-team-button {
+  cursor: pointer;
   color: #2C7DA0;
+  font-size: 0.8rem;
 }
 
 .todo {
@@ -265,7 +280,6 @@ input[type=radio]:checked + label:before {
   padding-top: 20px;
   width: 100%;
   height: calc(100%);
-  background: #A9D6E5;
 }
 
 .todo-menu {
@@ -274,6 +288,10 @@ input[type=radio]:checked + label:before {
   display: flex;
   justify-content: center;
   padding: 7px;
+}
+.todo-menu__team-name {
+  font-weight: 600;
+  font-size: 2rem;
 }
 .todo-menu__left-side {
   width: 50%;
@@ -287,11 +305,12 @@ input[type=radio]:checked + label:before {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 17px;
-  border-radius: 2px;
+  padding: 16px;
   margin-bottom: 8px;
   background: #fff;
-  transition: color none, background none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  transition: color 0.1s, background 0.1s;
 }
 .todo-task:hover {
   background: #f2f2f2;
@@ -307,19 +326,31 @@ input[type=radio]:checked + label:before {
 .todo-task__right-side {
   min-width: 80px;
 }
+.todo-task__task-name {
+  font-weight: normal;
+}
 .todo-task__delete-btn {
   display: flex;
   align-items: center;
   border-radius: 2px;
   background: #2C7DA0;
   color: #fff;
-  padding: 4.8px;
   font-size: 1rem;
   transition: color 0.1s, background 0.1s;
 }
 .todo-task__delete-btn:hover {
   background: #fff;
   color: #2C7DA0;
+}
+
+.todo-create-task {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #2C7DA0;
+}
+.todo-create-task__button {
+  display: flex;
+  align-items: center;
 }
 
 .todo-list {

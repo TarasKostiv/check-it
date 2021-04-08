@@ -1,5 +1,5 @@
 import React from 'react';
-import {VscTrash} from "react-icons/all";
+import {VscStarEmpty, VscTrash} from "react-icons/all";
 
 function TodoTask({name = 'Task name' , id}) {
     return (
@@ -10,8 +10,8 @@ function TodoTask({name = 'Task name' , id}) {
                 <h3 className="todo-task__task-name">{name}</h3>
             </div>
             <div className="todo-task__right-side right-side">
-                <input type="checkbox" name="important-checkbox" id={id/Math.PI} className="todo-task__important-checkbox"/>
-                <label htmlFor={id/Math.PI}></label>
+                <input type="checkbox" name="important-checkbox" id={id/Math.PI} className="todo-task__important-checkbox important-checkbox"/>
+                <label htmlFor={id/Math.PI}><VscStarEmpty/></label>
                 <button className="todo-task__delete-btn"><VscTrash/></button>
             </div>
         </li>

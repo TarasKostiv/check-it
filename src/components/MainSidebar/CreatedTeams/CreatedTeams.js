@@ -21,8 +21,9 @@ function CreatedTeams(props) {
         <div className="created-team team-block">
             <ListOfTeams name={'Created teams'} >
                 {renderTeams(createdTeams)}
+                <CreateTeamButton />
             </ListOfTeams>
-            <CreateTeamButton />
+
         </div>
     )
 }

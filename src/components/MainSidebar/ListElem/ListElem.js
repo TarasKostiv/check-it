@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {VscChecklist} from "react-icons/all";
 
-function ListElem({icon = '♣', name = 'undefined', taskCount = null, to="/"}) {
+function ListElem({name = 'undefined', icon = <VscChecklist/>, id, to="/", taskCount = null}) {
     return (
-        <li className="list-elem">
+        <li key={id} className="list-elem">
             <Link to={to}>
                 <div className="list-elem__left-side left-side">
                     {icon} &nbsp; <h3 className="list-elem__name">{name}</h3>

@@ -7,7 +7,7 @@
   padding-top: $padding-top;
   width: 100%;
   height: calc(100%);
-  background: $light-blue;
+  //background: $light-blue;
 }
 
 .todo-menu{
@@ -16,6 +16,11 @@
   display: flex;
   justify-content: center;
   padding: 7px;
+
+  &__team-name{
+    font-weight: 600;
+    font-size: 2rem;
+  }
 
   &__left-side{
     width: 50%;
@@ -31,11 +36,14 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 17px;
-  border-radius: $border-radius;
+  padding: $padding * 2;
   margin-bottom: $margin;
   background: #fff;
-  @include color-hover($grey, inherit, none);
+  border-bottom: 1px solid transparentize(#000, 0.8);
+  border-top: 1px solid transparentize(#000, 0.8);
+
+
+  @include color-hover($grey, inherit);
 
   &__right-side, &__left-side{
     display: flex;
@@ -50,16 +58,29 @@
     min-width: 80px;
   }
 
+  &__task-name{
+    font-weight: normal;
+  }
+
   &__delete-btn{
     display: flex;
     align-items: center;
     border-radius: $border-radius;
     background: $main-color;
     color: $theme-font-color;
-    padding: $padding * 0.6;
     font-size: 1rem;
 
-    @include color-hover($theme-font-color, $main-color)
+    @include color-hover($theme-font-color, $main-color);
+  }
+}
+
+.todo-create-task{
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: $main-color;
+  &__button{
+    display: flex;
+    align-items: center;
   }
 }
 

@@ -10,6 +10,7 @@ input[type="text"]{
   background: #fff;
 }
 // checkbox
+// simple checkbox
 .simple-checkbox { display: none; }
 
 .simple-checkbox + label {
@@ -50,6 +51,21 @@ input[type="text"]{
   border-left-color: transparent;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+// important-checkbox
+.important-checkbox{
+  display: none;
+}
+
+.important-checkbox + label {
+  @extend button;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  margin-right: $margin;
+  background: $main-color;
+  color: $theme-font-color;
+  @include color-hover($theme-font-color, $main-color);
 }
 
 // radio

@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import TodoMenu from "../TodoMenu"
 import TodoList from "../TodoList"
-import TodoForm from "../TodoForm"
 import TodoTask from "../TodoTask"
+import TodoCreateTask from "../TodoCreateTask"
 
 function Todo(props) {
     const [tasks, setTasks] = useState([
@@ -19,11 +19,11 @@ function Todo(props) {
     }
     return (
         <div className="todo">
-            <TodoMenu teamName={'lol'} icon={null}/>
+            <TodoMenu teamName={'List of tasks'} icon={null}/>
             <TodoList >
                 {renderTasks(tasks)}
+                <TodoCreateTask />
             </TodoList>
-            <TodoForm />
         </div>
     )
 }

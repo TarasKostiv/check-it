@@ -4,7 +4,7 @@ function TodoMenu({teamName = 'Team name', icon}  ) {
     return (
         <menu className="todo-menu">
             <div className="todo-menu__left-side left-side">
-                <i>{icon}</i>
+                {icon}
                 <h2 className="todo-menu__team-name">{teamName}</h2>
             </div>
             <div className="todo-menu__right-side right-side">

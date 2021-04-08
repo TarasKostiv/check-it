@@ -7,6 +7,19 @@
   padding-right: $corner-padding;
   padding-top: $padding-top;
   overflow-y: auto;
+  transition: $transition-time * 4 cubic-bezier(0.33, 1, 0.68, 1);
+
+  &_hidden{
+    margin-left: -300px;
+  }
+
+  .team-block{
+    .list-elem{
+      &__name{
+        font-weight: normal;
+      }
+    }
+  }
 
   .created-team{
     margin-top: $margin * 3 ;
@@ -24,29 +37,15 @@
           display: flex;
           align-items: center;
         }
-
-        &:hover{
-          background: #e2e2e2;
-        }
+        @include color-hover(#e2e2e2, inherit)
       }
     }
   }
 
   .create-team-button {
-    &__btn {
-      display: flex;
-      align-items: center;
-      border-radius: $border-radius;
-      background: $main-color;
-      color: $theme-font-color;
-      padding-top: $padding * 0.6;
-      padding-bottom: $padding * 0.6;
-      padding-right: $padding;
-      padding-left: $padding;
-      font-size: 0.8rem;
-
-      @include color-hover($theme-font-color, $main-color)
-    }
+    cursor: pointer;
+    color: $main-color;
+    font-size: 0.8rem;
   }
 }
 
