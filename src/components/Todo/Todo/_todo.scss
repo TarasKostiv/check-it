@@ -42,7 +42,6 @@
   border-bottom: 1px solid transparentize(#000, 0.8);
   border-top: 1px solid transparentize(#000, 0.8);
 
-
   @include color-hover($grey, inherit);
 
   &__right-side, &__left-side{
@@ -67,10 +66,25 @@
     align-items: center;
     border-radius: $border-radius;
     background: $main-color;
-    color: $theme-font-color;
+    color: $theme-color;
     font-size: 1rem;
 
-    @include color-hover($theme-font-color, $main-color);
+    @include color-hover($theme-color, $main-color);
+  }
+
+  &_completed{
+    color: $grey;
+    .todo-task__task-name{
+      text-decoration: line-through;
+    }
+    //.todo-task__complete-checkbox + label:before{
+    //  border-color: $grey;
+    //}
+    .todo-task__delete-btn, .todo-task__important-checkbox + label{
+      background: $grey;
+    }
+
+    @include color-hover(none, $grey);
   }
 }
 

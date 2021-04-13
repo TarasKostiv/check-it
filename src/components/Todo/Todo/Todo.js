@@ -3,29 +3,22 @@ import TodoMenu from "../TodoMenu"
 import TodoList from "../TodoList"
 import TodoTask from "../TodoTask"
 import TodoCreateTask from "../TodoCreateTask"
+import {useTasksContext} from "../../../context/TasksContext";
 
-function Todo(props) {
-    const [tasks, setTasks] = useState([
-        {id: (Math.floor(Math.random() * 10000)), name: 'My summer plan'},
-        {id: (Math.floor(Math.random() * 10000)), name: 'Work'},
-        {id: (Math.floor(Math.random() * 10000)), name: 'University'},
-        {id: (Math.floor(Math.random() * 10000)), name: 'Dreams'},
-    ])
-
+export default function Todo ({listName}){
+    const {createdTasks} = useTasksContext()
     const renderTasks = (group) => {
         return group.map(team => {
-            return <TodoTask name={team.name} id={team.id}/>
+            return <TodoTask name={team.name} id={team.id} isCompleted={team.isCompleted}/>
         })
     }
     return (
         <div className="todo">
-            <TodoMenu teamName={'List of tasks'} icon={null}/>
+            <TodoMenu teamName={listName} icon={null}/>
             <TodoList >
-                {renderTasks(tasks)}
+                {renderTasks(createdTasks)}
                 <TodoCreateTask />
             </TodoList>
         </div>
     )
 }
-
-export default Todo

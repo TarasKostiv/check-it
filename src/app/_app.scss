@@ -2,4 +2,5 @@
   @include df();
   flex-wrap: nowrap;
   height: calc(100vh - 45px);
+  position: relative;
 }

@@ -72,13 +72,13 @@ button, .important-checkbox + label {
 input[type=text] {
   border: none;
   border-radius: 2px;
+  border: 1px solid #a6a6a6;
+  padding: 6.4px;
   outline: none;
   transition: 0.1s all;
 }
-
-.input-search {
-  padding: 5px;
-  background: #fff;
+input[type=text]:focus, input[type=text]:hover {
+  border-color: #000;
 }
 
 .simple-checkbox {
@@ -136,13 +136,13 @@ input[type=text] {
   cursor: pointer;
   display: flex;
   margin-right: 8px;
-  background: #2C7DA0;
+  background: #db4c3f;
   color: #fff;
   transition: color 0.1s, background 0.1s;
 }
 .important-checkbox + label:hover {
   background: #fff;
-  color: #2C7DA0;
+  color: #db4c3f;
 }
 
 input[type=radio] {
@@ -198,10 +198,81 @@ input[type=radio]:checked + label:before {
   flex-wrap: wrap;
   flex-wrap: nowrap;
   height: calc(100vh - 45px);
+  position: relative;
+}
+
+.modal {
+  top: -45px;
+  left: 0;
+  z-index: 999;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modal__content {
+  min-height: 200px;
+  min-width: 300px;
+  background: #fff;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.modal__header {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.modal__bar-upper, .modal__bar-footer, .modal__main {
+  padding: 16px;
+}
+.modal__bar-upper {
+  border-bottom: 1px solid #f2f2f2;
+}
+.modal__bar-footer {
+  border-top: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal input {
+  font-size: 0.9rem;
+}
+.modal button, .modal .important-checkbox + label {
+  font-size: 0.9rem;
+  transition: all 0.1s;
+}
+.modal__btn-cancel {
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  margin-right: 8px;
+  transition: color 0.1s, background 0.1s;
+}
+.modal__btn-cancel:hover {
+  background: #f2f2f2;
+  color: inherit;
+  border: 1px solid #000;
+}
+.modal__btn-action {
+  background: #db4c3f;
+  color: #fff;
+  border: 1px solid #db4c3f;
+  transition: color 0.1s, background 0.1s;
+}
+.modal__btn-action:hover {
+  background: #fff;
+  color: #db4c3f;
+}
+.modal_hidden {
+  height: 0;
+  width: 0;
+  display: none;
 }
 
 .navigation {
-  background: #2C7DA0;
+  background: #db4c3f;
   color: #fff;
   height: 45px;
   padding: 0px 30px;
@@ -267,7 +338,7 @@ input[type=radio]:checked + label:before {
 }
 .main-sidebar .create-team-button {
   cursor: pointer;
-  color: #2C7DA0;
+  color: #db4c3f;
   font-size: 0.8rem;
 }
 
@@ -333,20 +404,34 @@ input[type=radio]:checked + label:before {
   display: flex;
   align-items: center;
   border-radius: 2px;
-  background: #2C7DA0;
+  background: #db4c3f;
   color: #fff;
   font-size: 1rem;
   transition: color 0.1s, background 0.1s;
 }
 .todo-task__delete-btn:hover {
   background: #fff;
-  color: #2C7DA0;
+  color: #db4c3f;
+}
+.todo-task_completed {
+  color: #f2f2f2;
+  transition: color 0.1s, background 0.1s;
+}
+.todo-task_completed .todo-task__task-name {
+  text-decoration: line-through;
+}
+.todo-task_completed .todo-task__delete-btn, .todo-task_completed .todo-task__important-checkbox + label {
+  background: #f2f2f2;
+}
+.todo-task_completed:hover {
+  background: none;
+  color: #f2f2f2;
 }
 
 .todo-create-task {
   cursor: pointer;
   font-size: 0.9rem;
-  color: #2C7DA0;
+  color: #db4c3f;
 }
 .todo-create-task__button {
   display: flex;

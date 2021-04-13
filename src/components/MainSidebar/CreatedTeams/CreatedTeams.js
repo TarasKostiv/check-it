@@ -2,28 +2,23 @@ import React, {useState} from 'react'
 import ListElem from "../ListElem"
 import ListOfTeams from "../ListOfTeams"
 import CreateTeamButton from "../CreateTeamButton"
+import {useListsContext} from "../../../context/ListsContext";
 
 function CreatedTeams(props) {
-    const [createdTeams, setCreatedTeams] = useState([
-        {id: (Math.floor(Math.random() * 10000)), name: 'My summer plan'},
-        {id: (Math.floor(Math.random() * 10000)), name: 'Work'},
-        {id: (Math.floor(Math.random() * 10000)), name: 'University'},
-        {id: (Math.floor(Math.random() * 10000)), name: 'Dreams'},
-    ])
+    const {createdLists, linker} = useListsContext()
 
     const renderTeams = (group) => {
         return group.map(team => {
-            return <ListElem name={team.name} id={team.id} to={team.name.replace(/\s/g, '-').toLowerCase()}/>
+            return <ListElem name={team.name} id={team.id} to={linker(team.name)}/>
         })
     }
 
     return (
         <div className="created-team team-block">
             <ListOfTeams name={'Created teams'} >
-                {renderTeams(createdTeams)}
+                {renderTeams(createdLists)}
                 <CreateTeamButton />
             </ListOfTeams>
-
         </div>
     )
 }

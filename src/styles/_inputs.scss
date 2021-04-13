@@ -1,14 +1,16 @@
 input[type="text"]{
   border: none;
   border-radius: $border-radius;
+  border: 1px solid $stronger-grey;
+  padding: $padding * 0.8;
   outline: none;
   transition: .1s all;
+
+  &:focus, &:hover{
+    border-color: $reversed-theme-color;
+  }
 }
 
-.input-search{
-  padding: 5px;
-  background: #fff;
-}
 // checkbox
 // simple checkbox
 .simple-checkbox { display: none; }
@@ -64,8 +66,8 @@ input[type="text"]{
   display: flex;
   margin-right: $margin;
   background: $main-color;
-  color: $theme-font-color;
-  @include color-hover($theme-font-color, $main-color);
+  color: $theme-color;
+  @include color-hover($theme-color, $main-color);
 }
 
 // radio
