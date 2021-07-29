@@ -6,6 +6,7 @@
 $main-font-family: 'Open Sans', sans-serif;
 // colors
 //#2C7DA0
+$default-color: #fff;
 $main-color: #db4c3f;
 $light-blue: #98cce5;
 $grey: #f2f2f2;
@@ -44,7 +45,7 @@ $transition-time: 0.1s;
 }
 
 html{
-  font-size: 14px;
+  font-size: 16px;
   font-family: $main-font-family;
 }
 
@@ -106,7 +107,6 @@ button{
 // import main styles
 @import './inputs';
 @import '../app/app';
-@import '../components/Modal/modal';
 @import '../components/Navigation/Navigation/navigation';
 @import '../components/MainSidebar/MainSidebar/main-sidebar';
 @import '../components/Todo/Todo/todo';

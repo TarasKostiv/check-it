@@ -10,6 +10,17 @@
   //background: $light-blue;
 }
 
+.todo-btn{
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+    background: $main-color;
+    color: $theme-color;
+    font-size: 1rem;
+    position: relative;
+    @include color-hover($theme-color, $main-color);
+}
+
 .todo-menu{
   max-width: $todo-width;
   width: 100%;
@@ -39,8 +50,9 @@
   padding: $padding * 2;
   margin-bottom: $margin;
   background: #fff;
-  border-bottom: 1px solid transparentize(#000, 0.8);
-  border-top: 1px solid transparentize(#000, 0.8);
+  position: relative;
+  //border-bottom: 1px solid transparentize(#000, 0.8);
+  //border-top: 1px solid transparentize(#000, 0.8);
 
   @include color-hover($grey, inherit);
 
@@ -90,11 +102,33 @@
 
 .todo-create-task{
   cursor: pointer;
-  font-size: 0.9rem;
   color: $main-color;
   &__button{
     display: flex;
     align-items: center;
+  }
+}
+
+.todo-create-task-form {
+  cursor: default;
+  @include color-hover($default-color, none);
+  .right-side{
+    min-width: 120px;
+  }
+  &__add-btn{
+    font-size: 0.9rem;
+  }
+  &__time-btn, &__remind-btn{
+    font-size: 1.2rem;
+  }
+  .todo-btn{
+    margin-left: $margin;
+  }
+
+  &__input{
+    font-size: 1rem;
+    border: none !important;
+    width: 100%;
   }
 }
 
@@ -105,22 +139,19 @@
   padding: 7px;
 }
 
-.todo-form{
-  max-width: $todo-width;
-  width: 100%;
-  @include df(center, center);
-  height: 40px;
-  &__form{
-    width: 100%;
-    @include df(flex-start, center);
+.todo-timepicker{
+  position: absolute;
+  top:  50px;
+
+  background: $default-color;
+
+  &__time{
+    right: 94px;
   }
-  &__left-side{
-    width: calc(100% - 300px);
+  &__remind{
+    right: 59px;
   }
-  &__right-side{
-    width: 300px;
-  }
-  .todo-form__task-text-input{
-    width: 100%;
+  &__hidden{
+    display: none;
   }
 }

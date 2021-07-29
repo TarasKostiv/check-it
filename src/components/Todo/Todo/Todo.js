@@ -18,7 +18,7 @@ export default function Todo ({match}){
     },[db, match.params.listId])
 
     const list = db.lists.find(list => list.id === match.params.listId)
-    if (!list) return <>
+    if (!list || !todos) return <>
         <BarLoader color={'#db4c3f'} loading={true} width={'100%'} height={3} speedMultiplier={0.5}/>
     </>
 
