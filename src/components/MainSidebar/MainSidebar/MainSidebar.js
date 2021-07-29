@@ -1,14 +1,11 @@
 import React from 'react'
-import ExistedTeams from "../ExistedTeams"
-import CreatedTeams from "../CreatedTeams"
-import {useAppContext} from "../../../context/AppContext";
+import TodosLists from "../TodosLists"
 
-function MainSidebar(props) {
-    const {isSidebarOpen} = useAppContext()
+function MainSidebar({lists}) {
     return (
-        <div className={isSidebarOpen ? "main-sidebar" : "main-sidebar main-sidebar_hidden"}>
-                <ExistedTeams />
-                <CreatedTeams />
+        // <div className={isSidebarOpen ? "main-sidebar" : "main-sidebar main-sidebar_hidden"}>
+        <div className={"main-sidebar"}>
+                <TodosLists lists={lists}/>
         </div>
     )
 }

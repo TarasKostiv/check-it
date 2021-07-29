@@ -1,25 +1,31 @@
+import React, {useEffect, useState} from "react";
 import Navigation from "../components/Navigation/Navigation"
 import MainSidebar from "../components/MainSidebar/MainSidebar"
-import SidebarNavigation from "../components/SidebarNavigation";
-import {AppContextProvider} from "../context/AppContext";
-import {BrowserRouter as Router} from "react-router-dom";
-import React from "react";
+import Todo from "../components/Todo/Todo/Todo"
+import DBContext from "../context/dbContext";
+import {Route, Switch} from "react-router-dom";
+import {get} from "../api/firebaseApi";
 
 function App() {
+    const [lists, setLists] = useState([])
+
+    useEffect(() => {
+        get('lists')().then(setLists)
+    },[])
   return (
-      <AppContextProvider>
-          <Router>
-              <div className="app">
-                  <header className="upper-container">
-                      <Navigation />
-                  </header>
-                  <main className="main-container">
-                      <MainSidebar />
-                      <SidebarNavigation />
-                  </main>
-              </div>
-          </Router>
-      </AppContextProvider>
+      <DBContext.Provider value={{lists, get}}>
+          <div className="app">
+              <header className="upper-container">
+                  <Navigation />
+              </header>
+              <main className="main-container">
+                  <MainSidebar lists={lists}/>
+                  <Switch>
+                      <Route path={'/:listId'} component={Todo}/>
+                  </Switch>
+              </main>
+          </div>
+      </DBContext.Provider>
   )
 }
 

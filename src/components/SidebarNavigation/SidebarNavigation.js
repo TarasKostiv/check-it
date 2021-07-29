@@ -1,38 +1,29 @@
 import React from 'react';
 import Todo from "../Todo/Todo";
-import {useListsContext} from "../../context/ListsContext";
-import {Route, Switch, } from "react-router-dom";
+import {Route, Switch, Redirect} from "react-router-dom";
 // import {
 //     TransitionGroup,
 //     CSSTransition
 // } from "react-transition-group";
 
 function SidebarNavigation({}) {
-    const {createdLists, existedLists, linker} = useListsContext()
+
     const todosListRender = (list) => {
         return list.map(todo => {
             return (
-                    <Route key={todo.id} path={linker(todo.name)}>
-                        <Todo key={todo.id} listName={todo.name}/>
+                    <Route key={todo.id} path={'/'}>
+                        <Todo key={todo.id} listName={todo.name} list={todo.list}/>
                     </Route>
             )
         })
-        console.log(createdLists.name)
     }
 
     return (
-        <>
-            <Switch>
-                    <Route path={linker('inbox')}>
-                        <Todo listName={'Inbox'}/>
-                    </Route>
-                    <Route path={linker('today')}>
-                        <Todo listName={'Today'}/>
-                    </Route>
-                    {todosListRender(createdLists)}
-                    {todosListRender(existedLists)}
-            </Switch>
-        </>
+        <Switch>
+            <Route exact path="/">
+                <Redirect to="/today" />
+            </Route>
+        </Switch>
     );
 }
 

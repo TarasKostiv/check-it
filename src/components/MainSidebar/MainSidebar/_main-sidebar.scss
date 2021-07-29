@@ -1,4 +1,4 @@
-.main-sidebar{
+.main-sidebar {
   background: $grey;
   height: 100%;
   max-width: 300px;
@@ -9,44 +9,44 @@
   overflow-y: auto;
   transition: $transition-time * 4 cubic-bezier(0.33, 1, 0.68, 1);
 
-  &_hidden{
+  &_hidden {
     margin-left: -300px;
   }
 
-  .team-block{
-    .list-elem{
-      &__name{
+  .team-block {
+    .list-elem {
+      &__name {
         font-weight: normal;
       }
     }
   }
 
-  .created-team{
-    margin-top: $margin * 3 ;
+  .created-team {
+    margin-top: $margin * 3;
   }
 
-  .list-of-teams{
-    &__list{
-      .list-elem{
+  .list-of-teams {
+    &__list {
+      .list-elem {
         margin-bottom: $margin;
         padding-top: $padding * 0.6;
         padding-bottom: $padding * 0.6;
         padding-right: $padding;
         padding-left: $padding;
-        &__left-side, &__right-side{
+
+        &__left-side, &__right-side {
           display: flex;
           align-items: center;
         }
+
         @include color-hover(#e2e2e2, inherit)
       }
     }
-  }
-
-  .create-team-button {
-    cursor: pointer;
-    color: $main-color;
-    font-size: 0.8rem;
+    .create-team-button {
+      cursor: pointer;
+      color: $main-color;
+      font-size: 0.8rem;
+    }
   }
 }
-
 

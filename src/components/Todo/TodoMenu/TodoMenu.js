@@ -1,11 +1,11 @@
 import React from 'react';
 
-function TodoMenu({teamName = 'Team name', icon}  ) {
+function TodoMenu({todoName = 'Team name', icon}  ) {
     return (
         <menu className="todo-menu">
             <div className="todo-menu__left-side left-side">
                 {icon}
-                <h2 className="todo-menu__team-name">{teamName}</h2>
+                <h2 className="todo-menu__team-name">{todoName}</h2>
             </div>
             <div className="todo-menu__right-side right-side">
                 <select name="tasks-filter" id="tasks-filter" className="todo-menu__tasks-filter">

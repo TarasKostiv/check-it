@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {useModalContext} from "../../context/ModalContext";
 
 function Modal({children, nameClass, title, actionName, actionFunc}) {
     const {isOpenCreateListModal, toggleModalCreateListModal} = useModalContext()
