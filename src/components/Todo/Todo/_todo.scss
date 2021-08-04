@@ -7,7 +7,7 @@
   padding-top: $padding-top;
   width: 100%;
   height: calc(100%);
-  //background: $light-blue;
+  overflow: auto;
 }
 
 .todo-btn{
@@ -135,8 +135,7 @@
 .todo-list{
   max-width: $todo-width;
   width: 100%;
-  height: calc(100% - 40px);
-  padding: 7px;
+  padding: $padding-top;
 }
 
 .todo-timepicker{

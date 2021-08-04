@@ -284,6 +284,7 @@ input[type=radio]:checked + label:before {
   padding-top: 20px;
   width: 100%;
   height: calc(100%);
+  overflow: auto;
 }
 
 .todo-btn {
@@ -413,8 +414,7 @@ input[type=radio]:checked + label:before {
 .todo-list {
   max-width: 900px;
   width: 100%;
-  height: calc(100% - 40px);
-  padding: 7px;
+  padding: 20px;
 }
 
 .todo-timepicker {
