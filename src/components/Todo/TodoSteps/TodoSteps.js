@@ -1,11 +1,8 @@
 import React from 'react';
-import {VscStarEmpty, VscTrash, VscStarFull, VscInfo} from "react-icons/all";
+import {VscTrash} from "react-icons/all";
 
-const randomNum = Math.random()
-
-function TodoTask({todo, onDelete, onUpdate, onSelect, selectedTodo}) {
+function TodoSteps({todo, onDelete, onUpdate, onSelect}) {
     const handleChangeComplete = (value) => onUpdate(todo.id, {isCompleted: value.target.checked})
-    const handleChangeFavorite = (value) => onUpdate(todo.id, {isFavorite: value.target.checked})
 
     return (
         <li key={todo.id} className={todo.isCompleted ? "todo-task todo-task_completed" : "todo-task"} >
@@ -15,15 +12,10 @@ function TodoTask({todo, onDelete, onUpdate, onSelect, selectedTodo}) {
                 <h3 className="todo-task__task-name">{todo.title}</h3>
             </div>
             <div className="todo-task__right-side right-side">
-                <button className="todo-btn" onClick={() => onSelect(todo)}><VscInfo/></button>
-                <input type="checkbox" name="important-checkbox" id={todo.id + randomNum} className="todo-task__important-checkbox important-checkbox" onChange={handleChangeFavorite}/>
-                <label htmlFor={todo.id + randomNum}>
-                    {todo.isFavorite ? <VscStarFull /> : <VscStarEmpty/>}
-                </label>
                 <button className="todo-task__delete-btn" onClick={() => onDelete(todo.id)}><VscTrash/></button>
             </div>
         </li>
     );
 }
 
-export default TodoTask;
+export default TodoSteps;

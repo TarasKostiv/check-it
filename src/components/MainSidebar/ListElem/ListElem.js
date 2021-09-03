@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {VscChecklist} from "react-icons/all";
 
-function ListElem({title = 'undefined', icon = <VscChecklist/>, id, to="/", taskCount = null}) {
+function ListElem({title, icon = <VscChecklist/>, id, to="/", taskCount = null, children}) {
     return (
         <li key={id} className="list-elem">
             <Link to={to}>
@@ -11,6 +11,7 @@ function ListElem({title = 'undefined', icon = <VscChecklist/>, id, to="/", task
                 </div>
                 <div className="list-elem__right-side right-side">
                     <p className="list-elem__task-count">{taskCount}</p>
+                    {children}
                 </div>
             </Link>
         </li>

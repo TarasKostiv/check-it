@@ -1,11 +1,6 @@
-// Firebase App (the core Firebase SDK) is always required and must be listed first
 import firebase from "firebase/app";
-
-// Add the Firebase products that you want to use
 import "firebase/auth";
 import "firebase/firestore";
-
-// For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
 const firebaseConfig = {
     apiKey: "AIzaSyCZQ3E_bZDnRBwlel2YQ_jSGPjKaLsHY0Q",
     authDomain: "check-it-99430.firebaseapp.com",
@@ -19,5 +14,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
+const auth = firebase.auth();
 
-export { db };
+export { db, auth };

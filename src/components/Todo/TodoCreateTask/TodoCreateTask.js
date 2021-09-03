@@ -14,8 +14,13 @@ function TodoCreateTask({onSubmit}) {
 
     const handleSubmit = (e) =>  {
         e.preventDefault()
-        onSubmit(title)
+        onSubmit({
+            title,
+            dataTime: time,
+            remindTime
+        })
         setTitle('')
+        setIsForm(false)
     }
 
     if(isForm) return (
@@ -48,7 +53,6 @@ function TodoCreateTask({onSubmit}) {
                         onChange={setRemindTime}
                         value={remindTime}
                     />
-
 
                     <button className="todo-btn todo-create-task-form__add-btn" onClick={handleSubmit}>Add</button>
                 </div>

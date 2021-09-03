@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {VscFilter} from "react-icons/all";
+import Sorter from "../Sorter/Sorter";
 
-function TodoMenu({todoName = 'Team name', icon}  ) {
+function TodoMenu({todoName, icon, onSortChange}  ) {
+    const [sorter, setSorter] = useState(false);
+    const handleChangeSorter = () => setSorter(prev => !prev);
+
     return (
         <menu className="todo-menu">
             <div className="todo-menu__left-side left-side">
@@ -8,15 +13,12 @@ function TodoMenu({todoName = 'Team name', icon}  ) {
                 <h2 className="todo-menu__team-name">{todoName}</h2>
             </div>
             <div className="todo-menu__right-side right-side">
-                <select name="tasks-filter" id="tasks-filter" className="todo-menu__tasks-filter">
-                    <option value="1" className="todo-menu__tasks-filter-option">1</option>
-                </select>
-                <select name="todo-functionality" id="todo-functionality" className="todo-menu__functionality">
-                    <option value="1" className="todo-menu__functionality-option">1</option>
-                </select>
+                <button className="todo-btn" onClick={handleChangeSorter}><VscFilter /></button>
+                {sorter ? <Sorter onSorterChange={onSortChange}/> : <></>}
+
             </div>
         </menu>
     );
-}
+};
 
 export default TodoMenu;

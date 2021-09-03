@@ -13,8 +13,24 @@
     margin-left: -300px;
   }
 
+  &__btn{
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+    background: $theme-color;
+    margin-left: $margin;
+    color: $main-color;
+    font-size: 0.8rem;
+    position: relative;
+    @include color-hover($main-color, $theme-color);
+  }
+
   .team-block {
     .list-elem {
+      a{
+        display: flex;
+        justify-content: space-between;
+      }
       &__name {
         font-weight: normal;
       }
@@ -38,14 +54,30 @@
           display: flex;
           align-items: center;
         }
+        &__task-count{
+          color: $stronger-grey;
+        }
 
-        @include color-hover(#e2e2e2, inherit)
+        @include color-hover(#e2e2e2, black)
       }
     }
     .create-team-button {
       cursor: pointer;
       color: $main-color;
       font-size: 0.8rem;
+    }
+    &__form{
+      display: flex;
+      justify-content: center;
+      margin-bottom: $margin;
+    }
+    &__input{
+      width: 100%;
+    }
+    &__add-btn{
+      font-size: 0.8rem;
+      padding: $padding;
+      margin: 0;
     }
   }
 }

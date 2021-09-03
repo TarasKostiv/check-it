@@ -15,8 +15,9 @@
     align-items: center;
     border-radius: $border-radius;
     background: $main-color;
+    margin-right: $margin;
     color: $theme-color;
-    font-size: 1rem;
+    font-size: 1.2rem;
     position: relative;
     @include color-hover($theme-color, $main-color);
 }
@@ -39,6 +40,7 @@
 
   &__right-side{
     width: 50%;
+    position: relative;
   }
 }
 
@@ -66,7 +68,7 @@
   }
 
   &__right-side {
-    min-width: 80px;
+    min-width: 180px;
   }
 
   &__task-name{
@@ -89,14 +91,12 @@
     .todo-task__task-name{
       text-decoration: line-through;
     }
-    //.todo-task__complete-checkbox + label:before{
-    //  border-color: $grey;
-    //}
-    .todo-task__delete-btn, .todo-task__important-checkbox + label{
+
+    .todo-task__delete-btn, .todo-task__important-checkbox + label, .todo-btn{
       background: $grey;
     }
 
-    @include color-hover(none, $grey);
+    @include color-hover($theme-color, $grey);
   }
 }
 
@@ -111,7 +111,7 @@
 
 .todo-create-task-form {
   cursor: default;
-  @include color-hover($default-color, none);
+  @include color-hover($theme-color, none);
   .right-side{
     min-width: 120px;
   }
@@ -120,9 +120,6 @@
   }
   &__time-btn, &__remind-btn{
     font-size: 1.2rem;
-  }
-  .todo-btn{
-    margin-left: $margin;
   }
 
   &__input{
@@ -142,7 +139,7 @@
   position: absolute;
   top:  50px;
 
-  background: $default-color;
+  background: $theme-color;
 
   &__time{
     right: 94px;
@@ -153,4 +150,83 @@
   &__hidden{
     display: none;
   }
+}
+
+.todo-sidebar{
+  position: relative;
+  min-width: 350px;
+
+  &__upper-menu, &__details, &__steps{
+    border-bottom: 1px solid $stronger-grey;
+    padding-bottom: $padding;
+    margin-bottom: $margin;
+  }
+
+  &__upper-menu{
+    display: flex;
+    align-items: center;
+  }
+
+  &__title{
+    font-size: 1.4rem;
+  }
+
+  &__close-btn{
+    font-size: 0.8rem;
+    margin: 0;
+    position: absolute;
+    right: $margin * 2.2;
+    top: $margin * 2.2;
+  }
+
+  &__todo-title{
+    font-size: 0.8rem;
+    margin-left: $margin;
+    overflow: hidden;
+  }
+
+  &__sm-title{
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  &__form{
+    padding: $padding;
+    background: $theme-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left-side{
+      width: 100%;
+    }
+  }
+}
+
+.todo-sorter{
+    background: $theme-color;
+    color: $reversed-theme-color;
+    padding: $padding;
+    border-radius: $border-radius;
+    position: absolute;
+    z-index: 9999;
+    top: -5px;
+    right: 40px;
+    min-width: 130px;
+    box-shadow: 0px 6px 15px -5px rgba(0,0,0,0.75);
+
+    &__txt{
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+
+    &__btn{
+      color: $main-color;
+      background: $theme-color;
+      border: 1px solid $main-color;
+      margin: $margin * 0.5;
+      font-size: 0.9rem;
+
+      @include color-hover ($main-color,$theme-color,)
+    }
 }

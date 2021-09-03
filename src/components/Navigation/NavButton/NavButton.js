@@ -1,9 +1,9 @@
 import React from 'react';
 
-function NavButton({icon, func, nameClass = ""}) {
+function NavButton({icon, onClick, nameClass = ""}) {
     return (
         <>
-            <button onClick={func} className={"nav-button " + nameClass}>{icon}</button>
+            <button onClick={onClick} className={"nav-button " + nameClass}>{icon}</button>
         </>
     );
 }

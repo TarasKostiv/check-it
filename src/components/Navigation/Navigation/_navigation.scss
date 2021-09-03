@@ -3,6 +3,7 @@
   color: #fff;
   height: 45px;
   padding: 0px $corner-padding;
+  position: relative;
 
   .nav-button{
     display: flex;
@@ -21,7 +22,31 @@
     align-items: center;
   }
 
-  &__left-side{
+  .accbar{
+    background: $theme-color;
+    color: $reversed-theme-color;
+    padding: $padding * 1.5;
+    border-radius: $border-radius;
+    position: absolute;
+    z-index: 9999;
+    top: 45px;
+    right: $corner-padding;
+    min-width: 230px;
+    box-shadow: 0px 6px 15px -5px rgba(0,0,0,0.75);
 
+    &__txt{
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+
+    &__btn{
+      color: $theme-color;
+      background: $main-color;
+      border: 1px solid $main-color;
+      margin-top: $margin;
+      font-size: 0.8rem;
+
+      @include color-hover($theme-color, $main-color)
+    }
   }
 }

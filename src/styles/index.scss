@@ -6,7 +6,6 @@
 $main-font-family: 'Open Sans', sans-serif;
 // colors
 //#2C7DA0
-$default-color: #fff;
 $main-color: #db4c3f;
 $light-blue: #98cce5;
 $grey: #f2f2f2;
@@ -44,13 +43,19 @@ $transition-time: 0.1s;
   margin: 0;
 }
 
+#root{
+  height: 100%;
+}
+
 html{
   font-size: 16px;
   font-family: $main-font-family;
+  height: 100%;
 }
 
 body{
   font-family: $main-font-family;
+  height: 100%;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -97,10 +102,30 @@ button{
 }
 
 .right-side{
-  @include df(flex-end)
+  @include df(flex-end, center)
 }
 .left-side{
-  @include df(flex-start)
+  @include df(flex-start, center)
+}
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 8px;
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: $stronger-grey;
 }
 
 
@@ -108,5 +133,6 @@ button{
 @import './inputs';
 @import '../app/app';
 @import '../components/Navigation/Navigation/navigation';
-@import '../components/MainSidebar/MainSidebar/main-sidebar';
+@import '../components/MainSidebar/Sidebar/main-sidebar';
 @import '../components/Todo/Todo/todo';
+@import '../components/AuthPage/authpage';
