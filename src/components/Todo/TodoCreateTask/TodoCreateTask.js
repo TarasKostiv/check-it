@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
-import {VscAdd, VscBell, VscCalendar} from "react-icons/all";
-import DateTimePicker from 'react-datetime-picker';
+import {VscAdd, VscCalendar} from "react-icons/all";
 
 function TodoCreateTask({onSubmit}) {
     const [isForm, setIsForm] = useState(false)
     const [time, setTime] = useState([new Date(), new Date()])
-    const [remindTime, setRemindTime] = useState([new Date(), new Date()])
     const [isTime, setIsTime] = useState(false)
-    const [isRemindTime, setIsRemindTime] = useState(false)
     const [title, setTitle] = useState('')
 
     const handleChange = () => setIsForm(true)
@@ -17,11 +14,11 @@ function TodoCreateTask({onSubmit}) {
         onSubmit({
             title,
             dataTime: time,
-            remindTime
         })
         setTitle('')
         setIsForm(false)
     }
+
 
     if(isForm) return (
         <form onSubmit={event => event.preventDefault()}>
@@ -32,26 +29,15 @@ function TodoCreateTask({onSubmit}) {
                 <div className="todo-task__right-side right-side">
                     <button className="todo-btn todo-create-task-form__time-btn" onClick={() => {
                         setIsTime(prev => !prev)
-                        setIsRemindTime(false)
                     }}>
                         <VscCalendar/>
                     </button>
-                    <DateTimePicker
-                        className={isTime ? "todo-timepicker todo-timepicker__time" : 'todo-timepicker__hidden'}
+                    <input
                         onChange={setTime}
-                        value={time}
-                    />
-
-                    <button className="todo-btn todo-create-task-form__remind-btn" onClick={() => {
-                        setIsRemindTime(prev => !prev)
-                        setIsTime(prev => false)
-                    }}>
-                        <VscBell/>
-                    </button>
-                    <DateTimePicker
-                        className={isRemindTime ? "todo-timepicker todo-timepicker__remind" : 'todo-timepicker__hidden'}
-                        onChange={setRemindTime}
-                        value={remindTime}
+                        type="datetime-local"
+                        name="datetime"
+                        id="datetime"
+                        className={isTime ? "todo-timepicker todo-timepicker__time" : 'todo-timepicker__hidden'}
                     />
 
                     <button className="todo-btn todo-create-task-form__add-btn" onClick={handleSubmit}>Add</button>

@@ -138,14 +138,13 @@
 .todo-timepicker{
   position: absolute;
   top:  50px;
+  border: 1px solid $reversed-theme-color;
+  padding: 5px;
 
   background: $theme-color;
 
   &__time{
-    right: 94px;
-  }
-  &__remind{
-    right: 59px;
+    right: 67px;
   }
   &__hidden{
     display: none;
@@ -160,6 +159,16 @@
     border-bottom: 1px solid $stronger-grey;
     padding-bottom: $padding;
     margin-bottom: $margin;
+  }
+
+  &__details-block{
+    margin-bottom: $margin;
+  }
+
+  &__input{
+    padding: $padding*0.5 ;
+    font-size: 1rem;
+    width: 100%;
   }
 
   &__upper-menu{

@@ -506,13 +506,12 @@ input[type=radio]:checked + label:before {
 .todo-timepicker {
   position: absolute;
   top: 50px;
+  border: 1px solid #000;
+  padding: 5px;
   background: #fff;
 }
 .todo-timepicker__time {
-  right: 94px;
-}
-.todo-timepicker__remind {
-  right: 59px;
+  right: 67px;
 }
 .todo-timepicker__hidden {
   display: none;
@@ -526,6 +525,14 @@ input[type=radio]:checked + label:before {
   border-bottom: 1px solid #a6a6a6;
   padding-bottom: 8px;
   margin-bottom: 8px;
+}
+.todo-sidebar__details-block {
+  margin-bottom: 8px;
+}
+.todo-sidebar__input {
+  padding: 4px;
+  font-size: 1rem;
+  width: 100%;
 }
 .todo-sidebar__upper-menu {
   display: flex;

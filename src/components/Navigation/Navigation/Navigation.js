@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import InputSearch from "../InputSearch";
 import NavButton from "../NavButton/";
-import { VscBell, VscAccount, VscMenu} from "react-icons/all";
+import { VscAccount, VscMenu} from "react-icons/all";
 import AccBar from "../AccBar/";
 import useStore from "../../../hooks/hookStore";
 
@@ -19,10 +19,9 @@ function Navigation() {
         <nav className="navigation">
             <div className="navigation__left-side left-side">
                 <NavButton nameClass="navigation__left-side__menu-btn" onClick={handleChangeSidebarStatus} icon={<VscMenu />}/>
-                <InputSearch />
+                {/*<InputSearch />*/}
             </div>
             <div className="navigation__right-side right-side">
-                <NavButton icon={<VscBell />} />
                 <NavButton onClick={handleAcc} icon={<VscAccount />}/>
                 {acc ? <AccBar/> : <></>}
             </div>
